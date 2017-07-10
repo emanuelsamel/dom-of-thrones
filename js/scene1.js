@@ -1,116 +1,126 @@
-function scene1() {
+function scene3() {
+
 
   // Setup Stage
-  stage        = document.querySelector('#stage')
-  meadow       = document.querySelector('#grassy-field')
-  meadowImgSrc = meadow.getAttribute('src')
-  stageImg     = stage.querySelector('#stage img')
-  stageImg.setAttribute('src', meadowImgSrc)
-
+  var stage = document.querySelector('#stage')
+  var desert = document.querySelector('#desert')
+  var desertImgSrc = desert.getAttribute('src')
+  var stageImg = stage.querySelector('#stage-img')
+  stageImg.setAttribute('src', desertImgSrc)
   // Setup Cast
+  var danny = document.querySelector('#danererys')
+  var drogo = document.querySelector('#drogo')
+  var dress = document.querySelector('#blue-dress')
+  var beef = document.querySelector('#bulky-man')
+  var dannyContainer = document.createElement('div')
+  var drogoContainer = document.createElement('div')
 
-  // Arya
-  arya = document.querySelector('#arya')
-  arya.style.position = 'absolute'
-  arya.style.height = '15%'
-  arya.style.top = '22%'
-  arya.style.left = '40%'
-  stage.append(arya)
+  dannyContainer.append(danny)
+  dannyContainer.append(dress)
+  drogoContainer.append(drogo)
+  drogoContainer.append(beef)
 
-  // Bran
-  bran = document.querySelector('#bran')
-  bran.style.position = 'absolute'
-  bran.style.height = '15%'
-  bran.style.top = '55%'
-  bran.style.left = '80%'
-  stage.append(bran)
+  // Character 1
+  stage.append(dannyContainer)
+  dannyContainer.style.width = '10%'
+  dannyContainer.style.height = '34%'
+  dannyContainer.style.position = 'absolute'
+  dannyContainer.style.top = '55%'
+  dannyContainer.style.left = '35%'
+  danny.style.position = 'absolute'
+  danny.style.top = '0'
+  danny.style.left = '17%'
+  danny.style.width = '42%'
+  dress.style.position = 'absolute'
+  dress.style.bottom = '0'
+  // Character 2
+  stage.append(drogoContainer)
+  drogoContainer.style.width = '11%'
+  drogoContainer.style.height = '40%'
+  drogoContainer.style.position = 'absolute'
+  drogoContainer.style.top = '45%'
+  drogoContainer.style.left = '80%'
+  drogo.style.position = 'absolute'
+  drogo.style.top = '0'
+  drogo.style.left = '18%'
+  drogo.style.width = '65%'
+  beef.style.position = 'absolute'
+  beef.style.bottom = '0'
 
   // Setup Props
-
-  // Mushroom
-  mushroom = document.querySelector('#mushroom')
-  mushroom.style.position = 'absolute'
-  mushroom.style.height = '10%'
-  mushroom.style.top = '75%'
-  mushroom.style.left = '40%'
-  stage.append(mushroom)
-
+  var egg = document.querySelector('#egg')
+  // Prop 1
+  stage.append(egg)
+  egg.style.position = 'absolute'
+  egg.style.width = '5%'
+  egg.style.top = '45%'
+  egg.style.right = '20%'
+  egg.style.transform = 'rotate(-35deg)'
+  // Prop 2
 
   // Action!
 
-  // Bran moves to mushroom
+  // Stage direction 1
   frame(function() {
-    bran.style.left = '70%'
+    egg.style.top = '45%'
+    dannyContainer.style.top = '55%'
   })
 
   frame(function() {
-    bran.style.left = '60%'
+    egg.style.top = '39%'
+    egg.style.right = '28%'
+    egg.style.transform = 'rotate(-47deg)'
+    dannyContainer.style.left = '32%'
   })
 
   frame(function() {
-    bran.style.left = '50%'
+    egg.style.top = '36%'
+    egg.style.right = '36%'
+    egg.style.transform = 'rotate(-63deg)'
+    dannyMoves()
   })
 
   frame(function() {
-    bran.style.top  = '65%'
-    bran.style.left = '40%'
-  })
-
-  // Bran eats mushroom
-  frame(function() {
-    mushroom.style.display = 'none'
-  })
-
-  // Bran grows bigger
-  frame(function() {
-    bran.style.height  = '17%'
+    egg.style.top = '34%'
+    egg.style.right = '44%'
+    egg.style.transform = 'rotate(-80deg)'
+    dannyMoves()
   })
 
   frame(function() {
-    bran.style.height = '20%'
+    egg.style.right = '52%'
+    egg.style.transform = 'rotate(-106deg)'
+    dannyMoves()
   })
 
   frame(function() {
-    bran.style.height = '25%'
-    bran.style.top    = '60%'
-    bran.style.left   = '37%'
+    egg.style.top = '37%'
+    egg.style.right = '60%'
+    egg.style.transform = 'rotate(-120deg)'
+    dannyMoves()
   })
 
   frame(function() {
-    bran.style.height = '30%'
-    bran.style.top    = '55%'
-    bran.style.left   = '36%'
-  })
-
-  // Bran chases Arya
-  frame(function() {
-    arya.style.left = '35%';
-    bran.style.top  = '54%'
-    bran.style.left = '37%'
+    egg.style.top = '42%'
+    egg.style.right = '68%'
+    egg.style.transform = 'rotate(-135deg)'
+    dannyMoves()
   })
 
   frame(function() {
-    arya.style.left = '30%';
-    bran.style.top  = '52%'
+    egg.style.top = '53%'
+    egg.style.right = '75%'
+    egg.style.transform = 'rotate(0deg)'
+    dannyMoves()
   })
 
-  frame(function() {
-    arya.style.left = '25%';
-    bran.style.top  = '50%'
-  })
+  // Stage direction 2
 
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
- frame(function() { branChasesArya() })
 
-  function branChasesArya() {
-    bran.style.left = (parseInt(bran.style.left) - 10) + '%'
-    bran.style.top  = (parseInt(bran.style.top)  - 5)  + '%'
-    arya.style.left = (parseInt(arya.style.left) - 10) + '%'
+  function dannyMoves() {
+    dannyContainer.style.left = (parseInt(dannyContainer.style.left) - 3) + '%'
   }
+  //reset stage
+  setTimeout(reset, time + 3000)
 
 }
